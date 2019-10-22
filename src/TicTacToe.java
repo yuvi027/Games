@@ -1,20 +1,30 @@
 import java.util.Scanner;
 
 public class TicTacToe {
-	static int[][] tic = {{0,0,0},
-			{0,0,0},
-			{0,0,0}};
+	static int[][] tic= new int[][] {{0,0,0},
+		   {0,0,0},
+		   {0,0,0}};
 	static boolean win = false;
 	static Scanner read = new Scanner(System.in);
-
-
+	public static void setBoard() 
+	{
+		tic= new int[][] {{0,0,0},
+			   {0,0,0},
+			   {0,0,0}};;
+	}
 	public static String printOutCome(int num1, int num2) {
 		if(tic[num1][num2] == 1)
+		{
 			return " X ";
+		}
 		else if(tic[num1][num2] == 2)
+		{
 			return " O ";
+		}
 		else
+		{
 			return "   ";
+		}
 	}
 	public static void checkPlayer1(int num1, int num2)
 	{
@@ -188,9 +198,9 @@ public class TicTacToe {
 			//creates matrix for tic-tac-toe
 			System.out.println("Do you want to play one or two players? 1 for one player, 2 for two players");
 			int play = read.nextInt();
+			printBoard();
 			if(play == 2)
 			{
-				printBoard();
 				System.out.println("Choose a Row: 1 for the top, 2 for middle, 3 for bottom");
 				int row = read.nextInt();
 				System.out.println("Choose a Column: 1 for the left, 2 for middle, 3 for right");
@@ -209,7 +219,6 @@ public class TicTacToe {
 			}
 			else
 			{
-				printBoard();
 				System.out.println("Choose a Row: 1 for the top, 2 for middle, 3 for bottom");
 				int row = read.nextInt();
 				System.out.println("Choose a Column: 1 for the left, 2 for middle, 3 for right");
@@ -229,6 +238,7 @@ public class TicTacToe {
 			read.nextLine();
 			System.out.println("Do you want to play again? (yes or no)");
 			pl = read.nextLine();
+			setBoard();
 		}
 	}
 }

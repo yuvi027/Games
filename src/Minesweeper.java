@@ -221,6 +221,7 @@ public class Minesweeper {
 					cnt++;
 			}
 			minesOut[row][col] = cnt;
+			
 			if(turns == (num*num)-10)
 			{
 				System.out.println("\n\n\t   You won!!!\n\n");
@@ -250,7 +251,8 @@ public class Minesweeper {
 				//System.out.println(winner(row, col));
 				check(rowNum, col);
 			}
-			System.out.println("Do you want to play again? 0 for no, 1 for yes");
+			read.nextLine();
+			System.out.println("Do you want to play again? (yes or no)");
 			play = read.nextLine();
 		}
 	}
